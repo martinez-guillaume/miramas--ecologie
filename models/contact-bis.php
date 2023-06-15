@@ -20,7 +20,7 @@ if (!empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['name'
            // Si l'un des champs requis est vide, redirection vers la page de contact
         echo '<script language="javascript">
             setTimeout(function() {
-                window.location.href = "https://xn--miramas-cologie-inb.fr/contact/Titre-pro-contact.php";
+                // window.location.href = "https://xn--miramas-cologie-inb.fr/contact/Titre-pro-contact.php";
             }, 1000);
         </script>';
         return;
@@ -28,7 +28,7 @@ if (!empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['name'
                 // Si la longueur des champs dépasse 255 caractères, redirection vers la page de contact
         echo '<script language="javascript">
             setTimeout(function() {
-                window.location.href = "https://xn--miramas-cologie-inb.fr/contact/Titre-pro-contact.php";
+                // window.location.href = "https://xn--miramas-cologie-inb.fr/contact/Titre-pro-contact.php";
             }, 1000);
         </script>';
         return;
@@ -48,7 +48,7 @@ if (!empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['name'
     echo '<script language="javascript">
                 document.write("<br><h3 style=color:green>Message envoyé avec succès...</h3>");
                 setTimeout(function() {
-                    window.location.href = "https://xn--miramas-cologie-inb.fr";
+                    // window.location.href = "https://xn--miramas-cologie-inb.fr";
                 }, 3000);
             </script>';
         } 

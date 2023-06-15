@@ -1,0 +1,17 @@
+{
+    "name": "guill/miramas-ecologie-mvc",
+    "autoload": {
+        "psr-4": {
+            "Guill\\MiramasEcologieMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guillaume Martinez",
+            "email": "guillaume.m.developer@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

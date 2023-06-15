@@ -1,4 +1,6 @@
 <?php 
+
+require ("./vendor/autoload.php");
 // $authorized_pages = [
 //     'accueil' => 'accueil',
 //     'carte' => 'carte',
@@ -45,3 +47,5 @@ if(empty($_GET['page'])){
         //break;
    }
 }
+
+require('./models/contact.mailer.php');
