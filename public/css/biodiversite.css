@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0px;
     padding: 0px;
 }
@@ -11,12 +11,12 @@
     margin:1% 0 0.5% 0;
 }
 /*logo de connexion*/
-i{
+/* i{
     color:#406346;
     font-size:150%;
     
-}
-i:hover{
+} */
+/* i:hover{
     color: #406346;
     text-shadow: 1px 1px 2px black, 0 0 1em rgb(210, 184, 118), 0 0 0.2em rgb(210, 184, 118);
 }
@@ -38,8 +38,8 @@ ul{
     align-items:center;
     
     
-}
-li{
+} */
+/* li{
     
     list-style-type: none;
     margin-top:1.3%;
@@ -62,9 +62,9 @@ a{
     font-size: 0.7em;
     font-family: inter;
     
-}
+} */
 /*container contenant le logo connexion et la phase se connecter*/
-#c{
+/* #c{
     width:200px;
     display: flex;
     flex-direction: column;
@@ -76,13 +76,13 @@ a{
     color:white;
     font-size: 1.6em;
     font-family: "Dancing Script";
-}
-#gd{
+}  */
+/* #gd{
     padding-top: 5%;
     padding-bottom:7%;
     background: rgb(64,99,70);
     background: linear-gradient(90deg, rgba(64, 99, 70, 0.5) 0%, rgba(255,255,255,1) 50%, rgba(64, 99, 70, 0.5) 100%);
-}
+} */
 main{
     display: flex;
     flex-direction: column;
@@ -96,12 +96,12 @@ main{
         padding-top:2%;
         background-color: white;
 }
-.lien-bio{
+/* .lien-bio{
     color: rgb(67, 67, 129);
     font-family: inter;
     font-size: 1em;
     text-decoration: underline;
-}
+} */
 .paragraphe{
     font-family: inter;
     font-style: italic;
@@ -121,7 +121,7 @@ h1{
   font-weight: 600;
   text-align: center;
 }
-#grand-footer{
+/* #grand-footer{
     background-color: #B9CCA6;
     height: 32vh;
  
@@ -139,8 +139,8 @@ h1{
     flex-wrap: wrap;
     margin: 3% 0 3% 0;
     height:9vh; 
-}
-
+} */
+/* 
 #titre-footer{
     color: #406346;
     text-align: center;
@@ -195,9 +195,9 @@ h1{
     font-size: 1em;
     font-style: italic;
     padding:1.5% 1% 1.5% 0 ;
-} 
+}  */
 /*Responsive*/
-#menuToggle{
+/* #menuToggle{
     display: block;
     position: relative;
     top:0px;
@@ -231,16 +231,16 @@ h1{
     
     cursor: pointer;
   
-    opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */ 
+    opacity: 0; 
+    z-index: 2; 
     -webkit-touch-callout: none;
-  }
+  } */
   
   /*
    * Just a quick hamburger
    */
    
-   .span-3{
+   /* .span-3{
     margin-bottom:0px !important;
    }
   #menuToggle span
@@ -269,41 +269,41 @@ h1{
   #menuToggle span:nth-last-child(2)
   {
     transform-origin: 0% 100%;
-  }
+  } */
   
   /* 
    * Transform all the slices of hamburger
    * into a crossmark.
    */
-  #menuToggle input:checked ~ span
+  /* #menuToggle input:checked ~ span
   {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
-  }
+  } */
   
   /*
    * But let's hide the middle one.
    */
-  #menuToggle input:checked ~ span:nth-last-child(3)
+  /* #menuToggle input:checked ~ span:nth-last-child(3)
   {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
-  }
+  } */
   
   /*
    * Ohyeah and the last one should go the other direction
    */
-  #menuToggle input:checked ~ span:nth-last-child(2)
+  /* #menuToggle input:checked ~ span:nth-last-child(2)
   {
     transform: rotate(-45deg) translate(0, -1px);
-  }
+  } */
   
   /*
    * Make this absolute positioned
    * at the top left of the screen
    */
-  #menu
+  /* #menu
   {
     position: absolute;
     text-align: center;
@@ -313,7 +313,7 @@ h1{
     background: #ffffff;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-    /* to stop flickering of text in safari */ 
+     
     transform-origin: 0% 0%;
     transform: translate(-100% );
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -329,7 +329,7 @@ h1{
   /*
    * And let's slide it in from the left
    */
-  #menuToggle input:checked ~ ul
+  /* #menuToggle input:checked ~ ul
   {
     transform: none;
   }
@@ -344,12 +344,12 @@ h1{
     text-align: center;
     margin:auto;
     
-  }
+  }  */
   
   
   /*Media Queries*/
   
-  
+/*   
   @media (max-width:900px) {   
      #hello{
        display:block;      
@@ -404,12 +404,12 @@ h1{
     background-color: #b9ccA6;
   }
     
-  }
+  } */
   
   
   @media (max-width:665px){
    
-    #logo-miramas{
+    /* #logo-miramas{
       width:60%;
       margin:auto;
     }
@@ -423,27 +423,27 @@ h1{
   }
   #container-section{
     margin-top:5%;
-  }
+  } */
   #paragraphe{
     width:90%;
   }
-  #container-footer-3{
+  /* #container-footer-3{
     padding:2% 0 2% 0;
-  }
+  } */
   h1{
     font-size: 1.5em;
     padding-bottom: 5%;
   }
-  #gd{
+  /* #gd{
     padding-top: 13%;
     padding-bottom: 13%;
-  } 
+  }  */
   main{
     width:78%;
     padding-bottom: 10%;
     padding-top: 7%;
   }
-    .container-footer{
+    /* .container-footer{
       height:26vh;
       margin-top:8%;
       flex-wrap: nowrap;
@@ -474,11 +474,11 @@ h1{
   .texte-footer-2{
   width:99%;
   margin-top:1%;    
-  }
+  } */
   
   }
   @media(max-width:391px){
-    .container-footer{
+    /* .container-footer{
       height:21vh;
       margin-top:8%;
       
@@ -497,9 +497,9 @@ h1{
      #texte-footer-3-2{
      width:99%;
       margin:auto;
-      text-align: center;
+      text-align: center; */
       /* font-size: 1em; */
-    }
+    /* }
     .texte-footer-22{   
       display:none;
       padding:0;
@@ -508,12 +508,12 @@ h1{
   .texte-footer-2{
     width:99%;
     margin-top:1%;    
-  }
+  } */
     h1{
       margin-top:5%;
       margin-bottom:5%;
     }
-    #phrase-logo{
+    /* #phrase-logo{
       font-size:1.1em;
       margin-bottom:2%;
     }
@@ -523,16 +523,16 @@ h1{
     }
      .phrase-connexion{
       font-size:0.7em;
-     }
+     } */
   }
   /*tel sarah*/
-  @media (max-width:376px){
+  /* @media (max-width:376px){
     .container-footer{
       height:42vh;  
     }
    
-  }
-  @media (max-width:321px){
+  } */
+  /* @media (max-width:321px){
     
     #phrase-logo{
       font-size:0.9em;
@@ -556,10 +556,10 @@ h1{
   margin-top:1%;    
   }
   
-  }
+  } */
   
   /*hauteur*/
-  
+/*   
   
   @media (max-height:391px){
     #hello{
@@ -603,8 +603,8 @@ h1{
   text-align: center;
   }
    
-  }
-  @media(max-height:321px){
+  } */
+  /* @media(max-height:321px){
     
     .container-footer{
       height:70vh;  
@@ -626,4 +626,4 @@ h1{
       height:120vh;
     }
    
-  }
+  } */

@@ -11,6 +11,7 @@
   <meta name="description" content="Site web écologique pour la ville de Miramas en Provence, dans les Bouches-du-Rhône. Découvrez la carte GPS des zones de tri, la section dons et déposez vos annonces écologiques. Contribuez à préserver l'environnement et promouvoir la durabilité.">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+  <link href="./public/css/base.css" rel="stylesheet">
   <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
