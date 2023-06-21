@@ -4,7 +4,8 @@ ob_start();
 
 ?>
 <?php
-require_once('./models/inscription-bis.php');
+// require_once('./models/inscription-bis.php');
+require('./models/inscription.mailer.php');
 ?>
 
 <div id="gd">

@@ -3,7 +3,6 @@
 ob_start();
 
 ?>
-
 <div id="gd">
       <h1 style="margin-top: 2%;">VALIDATION INSCRIPTION</h1>
       <div id="div-form">

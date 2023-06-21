@@ -5,6 +5,7 @@ ob_start();
 ?>
 <?php
 require_once('./models/deposer-une-annonce-bis.php');
+
 ?>
 <div id="gd">
       <h1>DEPOSER UNE ANNONCE</h1>

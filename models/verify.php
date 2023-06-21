@@ -5,16 +5,16 @@
 
 //vérifie si les champs "email" et "password" du formulaire de connexion ne sont pas vides 
 if (!empty($_POST['email']) && !empty($_POST['password'])){
-    // $secret = "6Lf7YFYmAAAAAMwCKNUqVUtVScNW6BhmXYzjlvMZ";
-    // $response = htmlspecialchars($_POST['g-recaptcha-response']);
-    // $remoteip = $_SERVER['REMOTE_ADDR'];
-    // //vérification du reCAPTCHA en envoyant une requête à l'API de Google reCAPTCHA 
-    // $request = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
+    $secret = "6Lf7YFYmAAAAAMwCKNUqVUtVScNW6BhmXYzjlvMZ";
+    $response = htmlspecialchars($_POST['g-recaptcha-response']);
+    $remoteip = $_SERVER['REMOTE_ADDR'];
+    //vérification du reCAPTCHA en envoyant une requête à l'API de Google reCAPTCHA 
+    $request = "https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip";
     
-    // $get = file_get_contents($request);
-    // $decode = json_decode($get,true);
-    
-    // if($decode['success'])
+    $get = file_get_contents($request);
+    $decode = json_decode($get,true);
+   
+    if($decode['success'])
 
 include ('./models/config.php');
 
@@ -41,22 +41,27 @@ include ('./models/config.php');
                 $password_verified = true;
                
                
-            //    header('Refresh:0; https://xn--miramas-cologie-inb.fr/index.php');
-               header('Refresh:0; http://localhost/miramas-ecologie-mvc/accueil');
+                header('Refresh:0; https://xn--miramas-cologie-inb.fr');
+              
                exit();
             }
         }
     }
     // afficher le message d'erreur si la variable est toujours à false
     if (!$password_verified) { 
-         echo '<script language="javascript">
-      document.write("<h3 style=color:red>Vous devez d\'abord vous inscrire s\'il vous plaît !<br>Une fois l\'inscription faite, veuillez vérifier votre boîte mail et cliquer sur le lien de confirmation qui vous a été envoyé pour activer votre compte.</h3>");
-  
-      setTimeout(function() {
-     // window.location.href = "https://xn--miramas-cologie-inb.fr/connexion-utilisateur/Titre-pro-se-connecter.php";
-     window.location.href = "http://localhost/miramas-ecologie-mvc/connexion";
-      }, 8000);
-    </script>';
+        echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: ">Vous devez d\'abord vous inscrire s\'il vous plaît !<br>Une fois l\'inscription faite, veuillez vérifier votre boîte mail et cliquer sur le lien de confirmation qui vous a été envoyé pour activer votre compte.",
+                 showConfirmButton: false,
+                 timer: 3000
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/connexion";
+                    }, 3000);
+                </script>';
+       
     }
     
 

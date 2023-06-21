@@ -3,7 +3,9 @@
 ob_start();
 
 ?>
-
+<?php
+session_start()
+?>
 <div id="gd">
       <main>
         <h1>PRÉSERVER LA BIODIVERSITÉ</h1>

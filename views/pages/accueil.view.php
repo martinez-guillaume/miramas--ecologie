@@ -3,7 +3,9 @@
 ob_start();
 
 ?>
-
+<?php
+session_start()
+?>
 <div id="photos-accueil"></div>
     <div id="rectangle-accueil">
       <p id="texte-rectangle">De petits gestes naissent de grandes choses...</p>

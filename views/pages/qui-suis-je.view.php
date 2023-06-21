@@ -3,7 +3,9 @@
 ob_start();
 
 ?>
-
+<?php
+session_start();
+?>
 <div id="gd">
       <div id="background-texte">
         <p id="bonjour">

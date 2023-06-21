@@ -42,6 +42,7 @@ $results = $stmt1->get_result();
 
 $date = date('Y-m-d H:i:s');
 
+
 // Boucle pour afficher chaque annonce
 while ($row = $results->fetch_assoc()) {
   $announcement_id = $row['id_announcement'];
@@ -65,7 +66,7 @@ while ($row = $results->fetch_assoc()) {
             <p class='texte'>
             " . $wrappedDescription . "
             </p>
-            <p class=date-time>Déposé le : ". $row["date_publication"] . "</p>
+            <p class=date-time>Déposé le : ". (new DateTime($row["date_publication"]))->format('d/m/Y \à  H:i') . "</p>
           </div>
           <div class=div-i>
             <a href=modifier-l-annonce?id=" . $announcement_id . "
@@ -99,18 +100,32 @@ while ($row = $results->fetch_assoc()) {
 
     // Vérification de la suppression
     if ($stmt->affected_rows > 0) {
-        echo "<div class='msg-delete-container'>";
-        echo "<br><h3 style='color:red'>L'annonce a été supprimée avec succès !</h3>";
-        echo "</div>";
-        echo '<script language="javascript">
-      
-        setTimeout(function() {
-            window.location.href = "http://localhost/miramas-ecologie-mvc/dons";
-        }, 3000);
-      
-        </script>';
+         echo '<script language="javascript">
+                Swal.fire({
+                icon: "success",
+                title: "Félicitations!",
+                text: "L\'annonce a été supprimée avec succès !",
+                showConfirmButton: false,
+                timer: 2100
+                });
+                setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/dons";
+                    }, 2100);
+                </script>';
     } else {
-        echo "Une erreur est survenue lors de la suppression de l'annonce : " . $connexion->error;
+        // echo "Une erreur est survenue lors de la suppression de l'annonce : " . $connexion->error;
+         echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: "Une erreur est survenue lors de la suppression de l\'annonce, veuillez réessayer ultérieurement, merci.",
+                 showConfirmButton: false,
+                 timer: 2100
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/deposer-une-annonce";
+                    }, 2100);
+                </script>';
     }
 
   
@@ -118,7 +133,7 @@ while ($row = $results->fetch_assoc()) {
 }
 
   }
-   // sinon, afficher les informations de l'annonce avec un bouton pour contacter l'auteur
+  // sinon, afficher les informations de l'annonce avec un bouton pour contacter l'auteur
   else {
     $description = $row["description"];
     $wrappedDescription = wordwrap($description, 70, "\n", true);
@@ -133,32 +148,29 @@ while ($row = $results->fetch_assoc()) {
               <p class='texte'>
                  " . $wrappedDescription . " 
               </p>
-              <p class=date-time>Déposé le : ". $row["date_publication"] . "</p>
+                     <p class=date-time>Déposé le : ". (new DateTime($row["date_publication"]))->format('d/m/Y \à  H:i') . "</p>
             </div>
-               <div class='container-button-contact'>
+              <div class='container-button-contact'>
             <form method='post' action=''>
-                <button type='submit' name='submit-contact' class='button-contact' onclick='event.preventDefault(); showErrorMessage()'>Contact</button>
+                <button type='submit' name='submit-contact' class='button-contact' onclick='event.preventDefault();'>Contact</button>
             </form>
-            <p id='error-message' class='red-' style='display: none ; color: red';>Vous devez être connecté pour contacter l'annonceur.</p>
-      
-    <script>
-        function showErrorMessage() {
-            var errorMessage = document.getElementById('error-message');
-            errorMessage.style.display = 'block';
-            setTimeout(function() {
-                errorMessage.style.display = 'none';
-            }, 4000);
-        }
-    </script>";
-
-    
            
-
+            <script>
+    document.querySelectorAll('.button-contact').forEach(function(button) {
+      button.addEventListener('click', function() {
+        Swal.fire({
+          icon: 'error',
+          title: 'Connectez-vous',
+          text: 'Vous devez être connecté pour contacter l\'annonceur !',
+          footer: '<a href=\"connexion\" style=\"color: green; font-family: Inter;\">Se connecter ?</a>'
+        });
+      });
+    });
+    </script>";
           echo "</div>
       </section>";
 }
 }
-
  //afficher les liens vers les pages précédentes et suivantes
 echo "<div id='pagination'>";
 for ($i = 1; $i <= $nombre_pages; $i++) {

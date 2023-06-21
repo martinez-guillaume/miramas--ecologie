@@ -7,6 +7,7 @@ ob_start();
 
 require_once('./models/verify.php');
 
+session_start()
 ?>
 <div id="gd"> <?php if (isset($_SESSION['username'])) {
   // utilisateur connecté
@@ -59,7 +60,7 @@ require_once('./models/verify.php');
           <!--<p class='mdp-oublier'></p></a>-->
           <div id='bouton-envoyer'>
             <button type='submit'
-            class='g-recaptcha' 
+             class='g-recaptcha' 
         data-sitekey='6Lf7YFYmAAAAAIwiDbCp86W4GThqtbGrL96VMg4s' 
         data-callback='onSubmit' 
         data-action='submit'>Se connecter</button>
@@ -74,7 +75,12 @@ require_once('./models/verify.php');
 }
 ?>
 </div>
-
+ <script>
+   function onSubmit(token) {
+     document.getElementById("formi").submit();
+   }
+ </script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 
 <?php 
 

@@ -3,7 +3,9 @@
 ob_start();
 
 ?>
-
+<?php
+session_start();
+?>
 <div id="gd">
       <main>
         <h1>Sobriété énergétique</h1>
@@ -15,7 +17,7 @@ ob_start();
           un engagement à plus long terme, à initier dès à présent.
         </p>
 
-        <h2>Des premiers gestes simples et immédiats</h2>
+        <h3 class="sous-titre">Des premiers gestes simples et immédiats</h2>
         <h6>Éclairage</h6>
         <p class="paragraphe">
           Éteindre l’éclairage intérieur des bâtiments lors des périodes de

@@ -34,7 +34,7 @@
            document.write("<h3 style=\'color: green; margin-bottom: 10%; margin-top: 4%;\'>Félicitations , Votre compte a bien été confirmé !</h3>");
        
            setTimeout(function() {
-             window.location.href = "https://miramas-écologie.fr/connexion-utilisateur/Titre-pro-se-connecter.php";
+             window.location.href = "https://xn--miramas-cologie-inb.fr/connexion";
            }, 4000);
          </script>';
      
@@ -47,7 +47,7 @@
            document.write("<h3 style=\'color: red; margin-bottom: 10%; margin-top: 4%;\'>Votre compte a déja été confirmé !</h3>");
        
            setTimeout(function() {
-             window.location.href = "https://miramas-écologie.fr";
+             window.location.href = "https://xn--miramas-cologie-inb.fr";
            }, 4000);
          </script>';
              }
@@ -56,7 +56,7 @@
            document.write("<h3 style=\'color: red; margin-bottom: 10%; margin-top: 4%;\'>L\'utilisateur n\'existe pas !</h3>");
        
            setTimeout(function() {
-             window.location.href = "https://miramas-écologie.fr";
+             window.location.href = "https://xn--miramas-cologie-inb.fr";
            }, 4000);
          </script>';
          }

@@ -3,12 +3,16 @@
 ob_start();
 
 ?>
-
+<?php
+session_start();
+// require('./models/contact-bis.php');
+require('./models/contact.mailer.php');
+?>
 <div id="gd">
       <div class="snowfall">
         <h1>Contactez moi</h1>
         <div id="div-form">
-          <form action="contact.mailer.php" method="POST" id="formu">
+          <form method="POST" id="formu">
             <label for="nom">Nom:</label><br>
             <input
               type="text"
@@ -55,13 +59,19 @@ ob_start();
         data-sitekey="6Lf7YFYmAAAAAIwiDbCp86W4GThqtbGrL96VMg4s" 
         data-callback='onSubmit' 
         data-action='submit'>Envoyer</button>
+        
               </div>
           </form>
         </div>
       </div>
     </div>
 
-
+ <script>
+   function onSubmit(token) {
+     document.getElementById("formu").submit();
+   }
+ </script>
+     <script src="https://www.google.com/recaptcha/api.js"></script>
 <?php 
 
 $content = ob_get_clean();

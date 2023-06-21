@@ -23,8 +23,8 @@ if (isset($_POST['submit'])) {
 
    // Vérification si l'utilisateur est connecté
    if (!isset($_SESSION['username'])) {
-    echo "<div class=container-green-text><p class=red-text-reservation>Vous devez être connecté pour réserver un livre.</p></div>";
-    exit();
+    header("Location: https://xn--miramas-cologie-inb.fr");
+    exit;
   }
 
 
@@ -33,12 +33,10 @@ date_default_timezone_set('Europe/Paris');
 $title = $_POST['title'];
 $description = $_POST['description'];
 $date = date('Y-m-d H:i:s');
+
 $announcement_id = $_GET['id'];
 
 
-  // start image upload
-// $target_dir = "../image/";
-// $uploadedFileName = $date . '_' .basename($_FILES["picture"]["name"]);
     // start image upload
     $target_dir = dirname(__FILE__, 2) . DIRECTORY_SEPARATOR . "public". DIRECTORY_SEPARATOR . "image" . DIRECTORY_SEPARATOR;
     $uploadedFileName = uniqid(rand(), true) . '_' .basename($_FILES["picture"]["name"]);
@@ -58,22 +56,56 @@ if (file_exists($target_file)) {
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" && $imageFileType != "webp" && $imageFileType != "jfif" ) {
-  echo "Désoler, seuleument JPG, JPEG, PNG , JFIF , WEBP & GIF fichiers sont acceptés.";
+  
+    echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: "Désoler, seuleument JPG, JPEG, PNG , JFIF , WEBP & GIF fichiers sont acceptés.",
+                 showConfirmButton: false,
+                 timer: 5000
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/modifier-l-annonce";
+                    }, 5000);
+                </script>';
   $uploadOk = 0;
 }
 
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-  echo "Désolé, votre fichier n'a pas été téléchargé.";
+ 
+   echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: "Désolé, votre fichier n\'a pas été téléchargé.",
+                 showConfirmButton: false,
+                 timer: 3500
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/modifier-l-annonce";
+                    }, 3500);
+                </script>';
 // if everything is ok, try to upload file
 } else {
-  if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
-    echo "The file " . htmlspecialchars($uploadedFileName) . " has been uploaded.";
+  if (!move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+     echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: "Désolé, une erreur s\'est produite lors du téléchargement de votre fichier.",
+                 showConfirmButton: false,
+                 timer: 3500
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/modifier-l-annonce";
+                    }, 3500);
+                </script>';
   } else {
-    echo "Désolé, une erreur s'est produite lors du téléchargement de votre fichier.";
-  }
-}
+  
+ 
 
 
 // end image upload
@@ -82,32 +114,12 @@ if ($uploadOk == 0) {
 
 
 if (empty($title)|| empty($uploadedFileName)|| empty($description)){
-  echo '<script language="javascript">
-
-  setTimeout(function() {
-
-    // window.location.href = "https://xn--miramas-cologie-inb.fr/inscription/Titre-pro-s-inscrire.php";
-    window.location.href = "http://localhost/miramas-ecologie-mvc/inscription";
-   
-  }, 1000);
-  
-  </script>';
-  
-  
-  return;
+   header("Location: https://xn--miramas-cologie-inb.fr");
+               exit;
 
  } elseif (strlen($title) > 255 || strlen($description) > 255) {
-    echo '<script language="javascript">
-
-    setTimeout(function() {
-
-      //window.location.href = "https://xn--miramas-cologie-inb.fr/inscription/Titre-pro-s-inscrire.php";
-      window.location.href = "http://localhost/miramas-ecologie-mvc/inscription";
-    }, 1000);
-    
-    </script>';
-    return;
-  
+  header("Location: https://xn--miramas-cologie-inb.fr");
+               exit;
 } else {
 
 
@@ -118,24 +130,36 @@ $stmt->execute();
 }
 // Exécution de la requête de mise à jour
 if ($stmt->execute())   {
-
-    echo '<script language="javascript">
-
-
-    document.write("<br><h3 style=color:green>Félicitations ! Votre annonce a bien été modifier . Elle sera bientôt publiée en ligne. Merci </h3>");
-
-    setTimeout(function() {
-
-     // window.location.href = "https://xn--miramas-cologie-inb.fr/dons/Titre-pro-dons.php";
-     window.location.href = "http://localhost/miramas-ecologie-mvc/dons";
-    }, 4000);
-  
-    </script>';
+      echo '<script language="javascript">
+                Swal.fire({
+                icon: "success",
+                title: "Félicitations!",
+                text: "Félicitations ! Votre annonce a bien été modifier . Elle sera bientôt publiée en ligne. Merci",
+                showConfirmButton: false,
+                timer: 3000
+                });
+                setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/dons";
+                    }, 3000);
+                </script>';
 } else {
-    echo "<div class=container-green-text><p class=green-text>Une erreur s'est produite lors de la modification de l'annonce . Veuillez vérifier les informations que vous avez saisies. " . $connexion->error . "</p></div>";
+    // echo "<div class=container-green-text><p class=green-text>Une erreur s'est produite lors de la modification de l'annonce . Veuillez vérifier les informations que vous avez saisies. " . $connexion->error . "</p></div>";
+      echo '<script language="javascript">
+                 Swal.fire({
+                 icon: "error",
+                 title: "Oops...",
+                 text: "Une erreur s\'est produite lors de la modification de l\'annonce . Veuillez vérifier les informations que vous avez saisies.",
+                 showConfirmButton: false,
+                 timer: 3000
+                 });
+                 setTimeout(function() {
+                         window.location.href = "https://xn--miramas-cologie-inb.fr/modifier-l-annonce";
+                    }, 3000);
+                </script>';
+      }
+    }
+  }
 }
-}
-
 
 mysqli_close($connexion);
   
