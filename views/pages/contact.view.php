@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 <?php
-session_start();
+
 // require('./models/contact-bis.php');
 require('./models/contact.mailer.php');
 ?>
@@ -66,12 +66,12 @@ require('./models/contact.mailer.php');
       </div>
     </div>
 
- <script>
+ <!-- <script>
    function onSubmit(token) {
      document.getElementById("formu").submit();
    }
  </script>
-     <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js"></script> -->
 <?php 
 
 $content = ob_get_clean();

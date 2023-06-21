@@ -5,13 +5,13 @@
     //   ini_set( 'display_errors', 1 );
     //      error_reporting( E_ALL );
 
-    session_start();
+    // session_start();
     
     use PHPMailer\PHPMailer\PHPMailer;
             
     // Vérification si les champs email, subject, name et message sont remplis
     if (!empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['name']) && !empty($_POST['message'])){
-        // $secret = "6Lf7YFYmAAAAAMwCKNUqVUtVScNW6BhmXYzjlvMZ";
+        // $secret = "";
         // $response = htmlspecialchars($_POST['g-recaptcha-response']);
         // $remoteip = $_SERVER['REMOTE_ADDR'];
         // // URL de requête pour vérifier le reCAPTCHA

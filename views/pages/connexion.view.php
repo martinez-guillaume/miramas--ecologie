@@ -7,7 +7,6 @@ ob_start();
 
 require_once('./models/verify.php');
 
-session_start()
 ?>
 <div id="gd"> <?php if (isset($_SESSION['username'])) {
   // utilisateur connecté
@@ -75,12 +74,12 @@ session_start()
 }
 ?>
 </div>
- <script>
+ <!-- <script>
    function onSubmit(token) {
      document.getElementById("formi").submit();
    }
  </script>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script> -->
 
 <?php 
 
