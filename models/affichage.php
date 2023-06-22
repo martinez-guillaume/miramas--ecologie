@@ -150,24 +150,31 @@ while ($row = $results->fetch_assoc()) {
               </p>
                      <p class=date-time>Déposé le : ". (new DateTime($row["date_publication"]))->format('d/m/Y \à  H:i') . "</p>
             </div>
-              <div class='container-button-contact'>
-            <form method='post' action=''>
-                <button type='submit' name='submit-contact' class='button-contact' onclick='event.preventDefault();'>Contact</button>
-            </form>
-           
-            <script>
+               <div class='container-button-contact'>";
+            if(isset($_SESSION['username'])) { 
+              echo " 
+              <a href='mailto:". $row["email"] ."' class='button-contact' >contact</a>";
+              
+            } else {
+              echo "<a class='button-contact'>Contact</a>";
+     echo "<script>
     document.querySelectorAll('.button-contact').forEach(function(button) {
       button.addEventListener('click', function() {
         Swal.fire({
           icon: 'error',
           title: 'Connectez-vous',
-          text: 'Vous devez être connecté pour contacter l\'annonceur !',
+          text: 'Vous devez être connecté pour contacter l\\'annonceur !',
+          confirmButtonColor: '#406346',
           footer: '<a href=\"connexion\" style=\"color: green; font-family: Inter;\">Se connecter ?</a>'
         });
       });
     });
-    </script>";
-          echo "</div>
+</script>";
+
+            }
+           echo "</div>
+      
+        
       </section>";
 }
 }
