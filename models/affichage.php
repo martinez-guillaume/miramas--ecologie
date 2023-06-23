@@ -184,7 +184,7 @@ for ($i = 1; $i <= $nombre_pages; $i++) {
     if ($i == $page_courante) {
         echo "<span class='page-active'>$i</span>";
     } else {
-        echo "<a class='page' href='?page=$i'>$i</a>";
+        echo "<a class='page' href='?dons=$i'>$i</a>";
       }
   }
 
