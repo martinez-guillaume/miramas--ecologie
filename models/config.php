@@ -1,7 +1,7 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
+$servername = "";
+$username = "";
 $password = "";
 $dbname = "miramas-ecologie";
 

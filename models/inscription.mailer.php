@@ -104,15 +104,15 @@ if (isset($_POST['submit'])) {
 <p>Bonjour ,<br>
 Félicitations et Merci de vous être inscrit sur notre site. Nous sommes ravis de vous accueillir parmi nous.<br>
 Veuillez cliquer sur le lien ci-dessous pour confirmer votre adresse e-mail : <br></p>
-<a href="https://miramas-écologie.fr/confirmation?username='.urlencode($username).'&key='.$key.'">Confirmez votre compte !</a>
+<a href="https://xn--miramas-cologie-inb.fr/confirmation?username='.urlencode($username).'&key='.$key.'">Confirmez votre compte !</a>
 <p>Si vous avez des questions ou des préoccupations, notre équipe est là pour vous aider.<br>
 Cordialement,<br>
 Miramas-écologie</p>
 </div>
-</body>     
+</body> 
 </html>
 ';
-
+// https://xn--miramas-cologie-inb.fr/
                 function envoie_mail($from_name, $from_email, $subject, $message) {
                     $mail = new PHPMailer(true); //on creer un objet phpmailer pour utiliser ses attributs et methodes
                     try {
@@ -125,14 +125,18 @@ Miramas-écologie</p>
                         $mail->Password = "Martine6714@"; //mot de passe pour passer la double authentification
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //permet de crypter le message
                         $mail->Port = 465; // le port
-
                         $mail->setFrom("support@xn--miramas-cologie-inb.fr", "Miramas ecologie"); //le message est envoyer par $from_email, et son nom $from_name
                         $mail->addAddress($_POST['email'] );
                         $mail->isHTML(true); // le message peut être au format HTML
+                        $mail->CharSet = 'UTF-8'; // Spécifie l'encodage des caractères
+                        // $mail->Encoding = 'base64'; // Encodage du corps du message
                         $mail->Subject = "Inscription";
                         $mail->Body = $message;
                         $mail->setLanguage('fr', '/optional/path/to/language/directory/'); //pour charger la version française
-                    //pour envoyer le message on va utiliser la méthode send
+                        // Ajouter l'en-tête Content-Type pour spécifier l'encodage
+                        $mail->addCustomHeader("Content-Type: text/html; charset=UTF-8");
+                        
+                   //pour envoyer le message on va utiliser la méthode send
                     if ($mail->send()) {
                         return true;
                     } else {
@@ -179,4 +183,5 @@ Miramas-écologie</p>
                 </script>';
             }
         }
+   
    
