@@ -57,7 +57,7 @@ input{
 
 #eyeshow  {
     float: right;
-    margin-left: 33%;
+    margin-left: 31%;
     margin-top: -32px;
     margin-bottom: 2.7%;
     position: relative;
@@ -73,7 +73,7 @@ input{
 
   #eyehide  {
     float: right;
-    margin-left: 33%;
+    margin-left: 31%;
     margin-top: -32px;
     margin-bottom: 2.7%;
     position: relative;
@@ -234,6 +234,9 @@ button{
       #eyeshow  {
         
         margin-bottom:3%;
+      }
+      .texte-inscription{
+        font-size: 12em;
       }
   }
  

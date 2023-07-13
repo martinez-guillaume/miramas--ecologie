@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ob_start();
 
@@ -9,8 +9,8 @@ require_once('./models/verify.php');
 
 ?>
 <div id="gd"> <?php if (isset($_SESSION['username'])) {
-  // utilisateur connecté
-    echo "<h1>Se déconnecter</h1>
+                // utilisateur connecté
+                echo "<h1>Se déconnecter</h1>
       <div id='div-form'>
         <form method='POST' action='' id='formi'>
           <div id='bouton-envoyer'>
@@ -23,9 +23,9 @@ require_once('./models/verify.php');
           </div>
         </form>
       </div>";
-}else{
-    /*utilisateur non connecter*/
-    echo "<h1>Connectez-vous</h1>
+              } else {
+                /*utilisateur non connecter*/
+                echo "<h1>Connectez-vous</h1>
       <div id='div-form'>
         <form method='POST' action='' id='formi'>
           <label for='email'>E-mail :</label><br>
@@ -66,22 +66,22 @@ require_once('./models/verify.php');
           </div>
           <div id='btn'>
         <a href='inscription'
-              ><p class='texte-inscription'>S'inscrire</p></a
+              ><p class='texte-inscription'>Pas encore inscrit ? Inscrivez-vous !</p></a
             >
           </div>
         </form>
       </div>";
-}
-?>
+              }
+              ?>
 </div>
- <!-- <script>
+<!-- <script>
    function onSubmit(token) {
      document.getElementById("formi").submit();
    }
  </script>
 <script src="https://www.google.com/recaptcha/api.js"></script> -->
 
-<?php 
+<?php
 
 $content = ob_get_clean();
 $title = "Connexion";

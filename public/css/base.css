@@ -448,7 +448,6 @@ text-align: center;
   @media (max-width:900px) {   
      #hello{
        display:block;      
-       z-index : 101;
        height : 11 vh;
        position: sticky;
        top:0px;
@@ -692,7 +691,7 @@ text-align: center;
 
 
 @media (max-height:391px){
-   #hello{
+   .menuBurger{
     height:15vh
   }
   #photos-velo{

@@ -6,10 +6,10 @@ session_start();
 if (isset($_POST['depot_annonce'])) {
   if (isset($_SESSION['username'])) {
     // utilisateur connecté 
-    header('Location: https://xn--miramas-cologie-inb.fr/deposer-une-annonce');
+    header('Location: http://localhost/miramas-ecologie-mvc/deposer-une-annonce');
     exit;
   } else {
-   header('Location: https://xn--miramas-cologie-inb.fr/connexion');
+   header('Location: http://localhost/miramas-ecologie-mvc/connexion');
     exit; 
   } 
 }

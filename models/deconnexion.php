@@ -7,5 +7,5 @@ session_unset();
 session_destroy();
 // header('Refresh:0;https://xn--miramas-cologie-inb.fr/index.php');
 
-header('Refresh:0;https://xn--miramas-cologie-inb.fr');
+header('Refresh:0;http://localhost/miramas-ecologie-mvc');
 ?>

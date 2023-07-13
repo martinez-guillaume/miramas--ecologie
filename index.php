@@ -1,6 +1,7 @@
 <?php 
 
 require ("./vendor/autoload.php");
+
 $authorized_pages = [
     'accueil' => 'accueil',
     'carte' => 'carte',
