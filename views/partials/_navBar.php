@@ -32,12 +32,12 @@
       </div>
     </nav>
     <!-- Fin menu burger    -->
-    <nav>
-      <ul>
-        <li><a href="accueil" class="light">Accueil</a></li>
-        <li><a href="carte" class="light">Carte</a></li>
-        <li><a href="dons" class="light">Dons</a></li>
-        <li><a href="qui-suis-je" class="light">Qui suis je</a></li>
-        <li><a href="contact" class="light">Contact</a></li>
+    <nav class="navbar">
+      <ul class="ulNavbar">
+        <li class="liNavbar"><a href="accueil" class="liensNavbar">Accueil</a></li>
+        <li class="liNavbar"><a href="carte" class="liensNavbar">Carte</a></li>
+        <li class="liNavbar"><a href="dons" class="liensNavbar">Dons</a></li>
+        <li class="liNavbar"><a href="qui-suis-je" class="liensNavbar">Qui suis je</a></li>
+        <li class="liNavbar"><a href="contact" class="liensNavbar">Contact</a></li>
       </ul>
     </nav>

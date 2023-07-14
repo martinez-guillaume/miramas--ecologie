@@ -1,5 +1,6 @@
 <?php
 
+
 include ('./models/config.php');
 
 $elements_par_page = 10;
@@ -72,7 +73,7 @@ foreach ($results as $row) {
             timer: 2100
           });
           setTimeout(function() {
-            window.location.href = "http://localhost/miramas-ecologie-mvc/dons";
+            window.location.href = "https://xn--miramas-cologie-inb.fr/dons";
           }, 2100);
         </script>';
       } else {
@@ -85,7 +86,7 @@ foreach ($results as $row) {
             timer: 2100
           });
           setTimeout(function() {
-            window.location.href = "http://localhost/miramas-ecologie-mvc/deposer-une-annonce";
+            window.location.href = "https://xn--miramas-cologie-inb.fr/deposer-une-annonce";
           }, 2100);
         </script>';
       }

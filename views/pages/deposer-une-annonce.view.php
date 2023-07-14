@@ -20,11 +20,7 @@ require_once('./models/deposer-une-annonce-bis.php');
             minlength="4"
             maxlength="40"
             value="<?php echo htmlspecialchars($_POST['title'] ?? ''); ?>"
-          ><br>
-          
-          
-          
-          
+          ><br>       
           <label for="image">Choisir une photos :</label><br>
           <input type="hidden" name="MAX_FILE_SIZE" value"10000000000">
           <input

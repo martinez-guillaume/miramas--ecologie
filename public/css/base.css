@@ -45,16 +45,16 @@ i:hover{
     justify-content: center;
     align-items: center;
 }
-nav{
+.navbar{
     background-color: #406346;
     height: 10vh;  
 }
-ul{
+.ulNavbar{
     display: flex;
     justify-content: space-around;
     align-items:center;    
 }
-li{    
+.liNavbar{    
     list-style-type: none;
     margin-top:1.3%;
 }
@@ -62,7 +62,7 @@ a{
     text-decoration: none;
     color:white;
     font-size: 1.6em;
-    font-family: "Dancing Script";   
+    font-family: "Dancing Script", Arial, sans-serif;   
 }
 
 #photos-accueil{
