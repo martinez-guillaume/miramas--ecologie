@@ -92,7 +92,7 @@ a{
     background: rgb(64,99,70);
     background: linear-gradient(90deg, rgba(64, 99, 70, 0.5) 0%, rgba(255,255,255,1) 50%, rgba(64, 99, 70, 0.5) 100%);
 }
-.light:hover{
+.liensNavbar:hover{
     
     text-shadow: 1px 1px 2px black, 0 0 1em rgb(210, 184, 118), 0 0 0.2em rgb(210, 184, 118);
     color: white;

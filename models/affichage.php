@@ -5,7 +5,7 @@ include ('./models/config.php');
 
 $elements_par_page = 10;
 
-$stmt = $connexion->prepare("SELECT COUNT(*) AS total FROM announcement");
+$stmt = $connexion->prepare("SELECT COUNT(*) FROM announcement");
 $stmt->execute();
 $total_elements = $stmt->fetchColumn();
 
